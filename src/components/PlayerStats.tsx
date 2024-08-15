@@ -6,18 +6,17 @@ interface Props {
 }
 
 export const PlayerStats: React.FC<Props> = ({ playerStats }): JSX.Element => (
-  <div className="flex flex-col gap-2">
-    <div className="flex items-center">
-      <span className="w-20">経験値</span>
-      <span className="flex-1 h-12 bg-gray-600 rounded flex items-center justify-center">
-        {playerStats.exp}
-      </span>
-    </div>
-    <div className="flex items-center">
-      <span className="w-20">レベル</span>
-      <span className="flex-1 h-12 bg-gray-600 rounded flex items-center justify-center">
-        {playerStats.level}
-      </span>
+  <div>
+    <p className="mb-2">現在のステータス</p>
+    <div className="grid grid-cols-2 gap-2">
+      <div className="h-12 bg-gray-600 rounded flex items-center">
+        <span className="w-1/2 text-center">経験値</span>
+        <span className="w-1/2 text-center text-2xl">{playerStats.exp}</span>
+      </div>
+      <div className="h-12 bg-gray-600 rounded flex items-center ">
+        <span className="w-1/2 text-center">レベル</span>
+        <span className="w-1/2 text-center text-2xl">{playerStats.level}</span>
+      </div>
     </div>
   </div>
 );
