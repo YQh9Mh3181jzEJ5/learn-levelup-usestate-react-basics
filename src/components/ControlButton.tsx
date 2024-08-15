@@ -1,3 +1,4 @@
+import { INITIAL_EXP, INITIAL_LEVEL } from "@/config";
 import { PlayerStats } from "@/types";
 import React from "react";
 
@@ -36,8 +37,11 @@ export const ControlButtons: React.FC<Props> = ({
       </button>
     </div>
     <button
-      className="w-full bg-red-500 hover:bg-red-700 py-2 px-4 rounded"
+      className="w-full bg-red-500 hover:bg-red-700 py-2 px-4 rounded disabled:bg-gray-500 disabled:cursor-not-allowed"
       onClick={onReset}
+      disabled={
+        playerStats.exp === INITIAL_EXP && playerStats.level === INITIAL_LEVEL
+      }
     >
       リセット
     </button>

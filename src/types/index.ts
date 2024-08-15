@@ -1,3 +1,4 @@
 export * from "./playerStats";
 export * from "./usePlayerStatsReturn";
-export * from "./gameFeature ";
+export * from "./gameFeature";
+export * from "./confirmModal";
