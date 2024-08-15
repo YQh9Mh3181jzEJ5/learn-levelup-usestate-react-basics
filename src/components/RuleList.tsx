@@ -4,7 +4,7 @@ import {
   EXP_TO_LEVEL_UP,
   INITIAL_LEVEL,
   INITIAL_EXP,
-} from "@/config";
+} from "@/features/playerStats/constants";
 import { ArrowRight } from "lucide-react";
 import { GameFeature } from "@/types";
 

@@ -1,4 +1,4 @@
-import { INITIAL_EXP, INITIAL_LEVEL } from "@/config";
+import { INITIAL_EXP, INITIAL_LEVEL } from "@/features/playerStats/constants";
 import { PlayerStats } from "@/types";
 import React from "react";
 

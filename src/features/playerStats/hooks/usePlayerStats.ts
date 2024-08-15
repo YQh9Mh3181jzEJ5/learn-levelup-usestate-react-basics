@@ -5,7 +5,7 @@ import {
   INITIAL_LEVEL,
   INITIAL_EXP,
   MAX_LEVEL,
-} from "@/config";
+} from "@/features/playerStats/constants";
 import { PlayerStats, UsePlayerStatsReturn } from "@/types";
 
 export const usePlayerStats = (): UsePlayerStatsReturn => {
