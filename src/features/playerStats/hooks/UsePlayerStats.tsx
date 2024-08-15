@@ -5,9 +5,9 @@ import {
   INITIAL_LEVEL,
   INITIAL_EXP,
 } from "@/config";
-import { PlayerStats } from "@/types";
+import { PlayerStats, UsePlayerStatsReturn } from "@/types";
 
-export const usePlayerStats = () => {
+export const usePlayerStats = (): UsePlayerStatsReturn => {
   const [playerStats, setPlayerStats] = useState<PlayerStats>({
     exp: INITIAL_EXP,
     level: INITIAL_LEVEL,

@@ -1,1 +1,1 @@
-export * from "./usePlayerStats";
+export * from "./UsePlayerStats";
