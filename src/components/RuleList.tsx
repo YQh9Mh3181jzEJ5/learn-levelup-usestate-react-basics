@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { EXP_INCREMENT, EXP_TO_LEVEL_UP, INITIAL_LEVEL } from "@/config";
+import {
+  EXP_INCREMENT,
+  EXP_TO_LEVEL_UP,
+  INITIAL_LEVEL,
+  INITIAL_EXP,
+} from "@/config";
 import { ChevronDown, ChevronUp, ArrowRight } from "lucide-react";
 
 export const RulesList: React.FC = (): JSX.Element => {
@@ -54,7 +59,7 @@ export const RulesList: React.FC = (): JSX.Element => {
             </div>
           ))}
           <p className="mt-2 italic text-gray-400">
-            ※初期値は、経験値: 0, レベル: {INITIAL_LEVEL}とする。
+            ※初期値は、経験値: {INITIAL_EXP}, レベル: {INITIAL_LEVEL}とする。
           </p>
         </div>
       </div>
