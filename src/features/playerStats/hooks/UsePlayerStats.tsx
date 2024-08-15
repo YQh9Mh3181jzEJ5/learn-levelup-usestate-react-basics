@@ -4,6 +4,7 @@ import {
   EXP_TO_LEVEL_UP,
   INITIAL_LEVEL,
   INITIAL_EXP,
+  MAX_LEVEL,
 } from "@/config";
 import { PlayerStats, UsePlayerStatsReturn } from "@/types";
 
@@ -14,28 +15,30 @@ export const usePlayerStats = (): UsePlayerStatsReturn => {
   });
 
   const addExp = useCallback((): void => {
-    setPlayerStats((prev) => {
-      if (prev.level >= 100) {
-        return prev;
-      }
+    setPlayerStats((prev: PlayerStats) => {
+      if (prev.level >= MAX_LEVEL) return prev;
+
       const newExp = prev.exp + EXP_INCREMENT;
-      if (newExp >= EXP_TO_LEVEL_UP) {
-        const newLevel = Math.min(prev.level + 1, 100);
-        return { exp: 0, level: newLevel };
+      if (newExp < EXP_TO_LEVEL_UP) {
+        return { ...prev, exp: newExp };
       }
-      return { ...prev, exp: newExp };
+
+      return {
+        exp: INITIAL_EXP,
+        level: Math.min(prev.level + 1, MAX_LEVEL),
+      };
     });
   }, []);
 
   const addLevel = useCallback((): void => {
-    setPlayerStats((prev) => ({
+    setPlayerStats((prev: PlayerStats) => ({
       ...prev,
-      level: Math.min(prev.level + 1, 100),
+      level: Math.min(prev.level + 1, MAX_LEVEL),
     }));
   }, []);
 
   const resetStats = useCallback((): void => {
-    setPlayerStats({ exp: 0, level: INITIAL_LEVEL });
+    setPlayerStats({ exp: INITIAL_EXP, level: INITIAL_LEVEL });
   }, []);
 
   return { playerStats, addExp, addLevel, resetStats };
