@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import {
   EXP_INCREMENT,
   EXP_TO_LEVEL_UP,
@@ -14,7 +14,7 @@ export const usePlayerStats = (): UsePlayerStatsReturn => {
     level: INITIAL_LEVEL,
   });
 
-  const addExp = useCallback((): void => {
+  const addExp = (): void => {
     setPlayerStats((prev: PlayerStats) => {
       if (prev.level >= MAX_LEVEL) return prev;
 
@@ -28,18 +28,18 @@ export const usePlayerStats = (): UsePlayerStatsReturn => {
         level: Math.min(prev.level + 1, MAX_LEVEL),
       };
     });
-  }, []);
+  };
 
-  const addLevel = useCallback((): void => {
+  const addLevel = (): void => {
     setPlayerStats((prev: PlayerStats) => ({
       exp: INITIAL_EXP,
       level: Math.min(prev.level + 1, MAX_LEVEL),
     }));
-  }, []);
+  };
 
-  const resetStats = useCallback((): void => {
+  const resetStats = (): void => {
     setPlayerStats({ exp: INITIAL_EXP, level: INITIAL_LEVEL });
-  }, []);
+  };
 
   return {
     playerStats,

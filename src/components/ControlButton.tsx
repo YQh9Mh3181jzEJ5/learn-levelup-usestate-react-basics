@@ -9,8 +9,7 @@ export const ControlButtons: React.FC<ControlButtonsProps> = ({
   playerStats,
 }): JSX.Element => {
   const isMaxLevel = playerStats.level >= 100;
-  const isInitialState =
-    playerStats.exp === INITIAL_EXP && playerStats.level === INITIAL_LEVEL;
+  const isInitialState = playerStats.exp === INITIAL_EXP && playerStats.level === INITIAL_LEVEL;
 
   return (
     <div className="flex flex-col gap-4">
