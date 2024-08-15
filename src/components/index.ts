@@ -4,3 +4,4 @@ export * from "./PlayerStats";
 export * from "./RuleList";
 export * from "./Header";
 export * from "./CountUp";
+export * from "./ConfirmModal";

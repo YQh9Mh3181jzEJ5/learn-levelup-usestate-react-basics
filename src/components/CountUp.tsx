@@ -1,7 +1,6 @@
 import React from "react";
 import { useConfirmModal, usePlayerStats } from "@/features/playerStats/hooks";
-import { ControlButtons, PlayerStats } from "@/components";
-import { ConfirmModal } from "./ConfirmModal";
+import { ControlButtons, PlayerStats, ConfirmModal } from "@/components";
 
 export const CountUp: React.FC = (): JSX.Element => {
   const { playerStats, addExp, addLevel, resetStats } = usePlayerStats();
