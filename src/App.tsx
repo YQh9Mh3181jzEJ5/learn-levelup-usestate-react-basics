@@ -10,7 +10,7 @@ const App: React.FC = () => {
         style={{ backgroundImage: `url(${bgImage})`, filter: "blur(4px)" }}
       ></div>
       <div className="relative z-10 flex justify-center min-h-screen bg-gray-900 bg-opacity-50 text-white">
-        <div className="flex flex-col w-1/2">
+        <div className="flex flex-col w-full sm:w-4/5 md:w-3/4 lg:w-1/2 max-w-4xl min-w-[280px] px-4">
           <Header />
           <CountUp />
         </div>
