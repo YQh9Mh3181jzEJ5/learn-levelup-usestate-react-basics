@@ -1,8 +1,6 @@
-import { GameRules } from "./components/GameRules";
 import "./App.css";
-import { usePlayerStats } from "./features/playerStats/hooks/usePlayerStats";
-import { ControlButtons } from "./components/ControlButton";
-import { PlayerStats } from "./components/PlayerStats";
+import { ControlButtons, PlayerStats, GameRules } from "@/components";
+import { usePlayerStats } from "@/features/playerStats/hooks";
 
 function App() {
   const { playerStats, addExp, addLevel, resetStats } = usePlayerStats();
@@ -17,6 +15,7 @@ function App() {
             onAddExp={addExp}
             onAddLevel={addLevel}
             onReset={resetStats}
+            playerStats={playerStats}
           />
         </div>
       </div>
