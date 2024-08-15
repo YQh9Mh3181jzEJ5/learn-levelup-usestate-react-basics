@@ -1,5 +1,5 @@
 import React from "react";
-import { PlayerStats as PlayerStatsType } from "../types/playerStats";
+import { PlayerStats as PlayerStatsType } from "@/types";
 
 interface Props {
   stats: PlayerStatsType;
