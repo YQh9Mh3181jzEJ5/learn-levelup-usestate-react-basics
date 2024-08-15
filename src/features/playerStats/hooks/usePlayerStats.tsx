@@ -10,9 +10,13 @@ export const usePlayerStats = () => {
 
   const addExp = useCallback(() => {
     setPlayerStats((prev) => {
+      if (prev.level >= 100) {
+        return prev;
+      }
       const newExp = prev.exp + EXP_INCREMENT;
       if (newExp >= EXP_TO_LEVEL_UP) {
-        return { exp: 0, level: prev.level + 1 };
+        const newLevel = Math.min(prev.level + 1, 100);
+        return { exp: 0, level: newLevel };
       }
       return { ...prev, exp: newExp };
     });
