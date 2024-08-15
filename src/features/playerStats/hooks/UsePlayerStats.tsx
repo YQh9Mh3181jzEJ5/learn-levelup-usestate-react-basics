@@ -32,7 +32,7 @@ export const usePlayerStats = (): UsePlayerStatsReturn => {
 
   const addLevel = useCallback((): void => {
     setPlayerStats((prev: PlayerStats) => ({
-      ...prev,
+      exp: INITIAL_EXP,
       level: Math.min(prev.level + 1, MAX_LEVEL),
     }));
   }, []);
