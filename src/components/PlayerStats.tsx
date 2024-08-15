@@ -5,7 +5,7 @@ interface Props {
   stats: PlayerStatsType;
 }
 
-export const PlayerStats: React.FC<Props> = ({ stats }) => (
+export const PlayerStats: React.FC<Props> = ({ stats }): JSX.Element => (
   <div className="flex flex-col gap-2">
     <div className="flex items-center">
       <span className="w-20">経験値</span>

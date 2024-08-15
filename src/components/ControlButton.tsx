@@ -13,7 +13,7 @@ export const ControlButtons: React.FC<Props> = ({
   onAddLevel,
   onReset,
   playerStats,
-}) => (
+}): JSX.Element => (
   <div className="flex flex-col gap-2">
     <div className="flex justify-evenly w-full gap-2">
       <button

@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   EXP_INCREMENT,
   EXP_TO_LEVEL_UP,
   INITIAL_LEVEL,
   INITIAL_EXP,
 } from "@/config";
-import { ChevronDown, ChevronUp, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-export const RulesList: React.FC = (): JSX.Element => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
+export const RulesList: React.FC = () => {
   const rules = [
     {
       title: "経験値アップ",
@@ -31,38 +29,21 @@ export const RulesList: React.FC = (): JSX.Element => {
   ];
 
   return (
-    <div className="text-sm bg-slate-800 rounded">
-      <button
-        className="flex justify-between items-center w-full p-4"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <h2 className="text-ms font-semibold">ルール</h2>
-        {isOpen ? (
-          <ChevronUp className="w-5 h-5" />
-        ) : (
-          <ChevronDown className="w-5 h-5" />
-        )}
-      </button>
-      <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-[360px]" : "max-h-0"
-        }`}
-      >
-        <div className="flex flex-col gap-4 p-4">
-          {rules.map((rule, index) => (
-            <div key={index} className="flex items-start">
-              <ArrowRight className="w-4 h-4 mt-1 mr-2 flex-shrink-0 text-blue-400" />
-              <div>
-                <h3 className="font-medium text-blue-400">{rule.title}</h3>
-                <p className="mt-1 text-gray-300">{rule.description}</p>
-              </div>
+    <div className="text-sm text-white">
+      <ul className="space-y-2">
+        {rules.map((rule, index) => (
+          <li key={index} className="flex items-start">
+            <ArrowRight className="w-4 h-4 mt-1 mr-2 flex-shrink-0 text-blue-700" />
+            <div>
+              <h3 className="font-medium text-blue-600">{rule.title}</h3>
+              <p className="mt-1">{rule.description}</p>
             </div>
-          ))}
-          <p className="mt-2 italic text-gray-400">
-            ※初期値は、経験値: {INITIAL_EXP}, レベル: {INITIAL_LEVEL}とする。
-          </p>
-        </div>
-      </div>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-2 italic text-gray-500 text-xs">
+        ※初期値は、経験値: {INITIAL_EXP}, レベル: {INITIAL_LEVEL}とする。
+      </p>
     </div>
   );
 };
