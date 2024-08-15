@@ -1,18 +1,21 @@
 import React from "react";
-import { usePlayerStats } from "@/features/playerStats/hooks";
+import { useConfirmModal, usePlayerStats } from "@/features/playerStats/hooks";
 import { ControlButtons, PlayerStats } from "@/components";
 import { ConfirmModal } from "./ConfirmModal";
 
 export const CountUp: React.FC = (): JSX.Element => {
+  const { playerStats, addExp, addLevel, resetStats } = usePlayerStats();
   const {
-    playerStats,
-    addExp,
-    addLevel,
-    resetStats,
-    isConfirmModalOpen,
-    confirmReset,
-    cancelReset,
-  } = usePlayerStats();
+    isOpen: isConfirmModalOpen,
+    openModal,
+    closeModal,
+  } = useConfirmModal();
+
+  const handleResetClick = (): void => openModal();
+  const handleConfirmReset = (): void => {
+    resetStats();
+    closeModal();
+  };
 
   return (
     <main className="flex justify-center w-full">
@@ -21,13 +24,13 @@ export const CountUp: React.FC = (): JSX.Element => {
         <ControlButtons
           onAddExp={addExp}
           onAddLevel={addLevel}
-          onReset={resetStats}
+          onReset={handleResetClick}
           playerStats={playerStats}
         />
         <ConfirmModal
           isOpen={isConfirmModalOpen}
-          onConfirm={confirmReset}
-          onCancel={cancelReset}
+          onConfirm={handleConfirmReset}
+          onCancel={closeModal}
           message="本当にリセットしますか？ この操作は取り消せません。"
         />
       </div>

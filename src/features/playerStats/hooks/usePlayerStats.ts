@@ -13,7 +13,6 @@ export const usePlayerStats = (): UsePlayerStatsReturn => {
     exp: INITIAL_EXP,
     level: INITIAL_LEVEL,
   });
-  const [isConfirmModalOpen, setIsConfirmModalOpen] = useState<boolean>(false);
 
   const addExp = useCallback((): void => {
     setPlayerStats((prev: PlayerStats) => {
@@ -39,16 +38,7 @@ export const usePlayerStats = (): UsePlayerStatsReturn => {
   }, []);
 
   const resetStats = useCallback((): void => {
-    setIsConfirmModalOpen(true);
-  }, []);
-
-  const confirmReset = useCallback((): void => {
     setPlayerStats({ exp: INITIAL_EXP, level: INITIAL_LEVEL });
-    setIsConfirmModalOpen(false);
-  }, []);
-
-  const cancelReset = useCallback((): void => {
-    setIsConfirmModalOpen(false);
   }, []);
 
   return {
@@ -56,8 +46,5 @@ export const usePlayerStats = (): UsePlayerStatsReturn => {
     addExp,
     addLevel,
     resetStats,
-    confirmReset,
-    isConfirmModalOpen,
-    cancelReset,
   };
 };

@@ -5,7 +5,4 @@ export interface UsePlayerStatsReturn {
   addExp: () => void;
   addLevel: () => void;
   resetStats: () => void;
-  confirmReset: () => void;
-  cancelReset: () => void;
-  isConfirmModalOpen: boolean;
 }

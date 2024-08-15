@@ -1,1 +1,2 @@
-export * from "./UsePlayerStats";
+export * from "./usePlayerStats";
+export * from "./useConfirmModal";
