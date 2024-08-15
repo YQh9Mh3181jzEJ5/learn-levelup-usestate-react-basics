@@ -14,21 +14,25 @@ export const ControlButtons: React.FC<Props> = ({
   onReset,
   playerStats,
 }): JSX.Element => (
-  <div className="flex flex-col gap-2">
+  <div className="flex flex-col gap-4">
     <div className="flex justify-evenly w-full gap-2">
       <button
-        className="flex-1 bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded disabled:bg-gray-500 disabled:cursor-not-allowed"
+        className="flex-1 bg-blue-500 hover:bg-blue-700 py-8 px-4 rounded disabled:bg-gray-500 disabled:cursor-not-allowed active:bg-blue-800"
         onClick={onAddExp}
         disabled={playerStats.level >= 100}
       >
         経験値アップ
+        <br />
+        +20
       </button>
       <button
-        className="flex-1 bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded disabled:bg-gray-500 disabled:cursor-not-allowed"
+        className="flex-1 bg-blue-500 hover:bg-blue-700 py-8 px-4 rounded disabled:bg-gray-500 disabled:cursor-not-allowed active:bg-blue-800"
         onClick={onAddLevel}
         disabled={playerStats.level >= 100}
       >
         レベルアップ
+        <br />
+        +1
       </button>
     </div>
     <button
