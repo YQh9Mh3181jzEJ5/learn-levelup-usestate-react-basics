@@ -38,7 +38,11 @@ export const RulesList: React.FC = (): JSX.Element => {
           <ChevronDown className="w-5 h-5" />
         )}
       </button>
-      {isOpen && (
+      <div
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-[360px]" : "max-h-0"
+        }`}
+      >
         <div className="flex flex-col gap-4 p-4">
           {rules.map((rule, index) => (
             <div key={index} className="flex items-start">
@@ -53,7 +57,7 @@ export const RulesList: React.FC = (): JSX.Element => {
             ※初期値は、経験値: 0, レベル: {INITIAL_LEVEL}とする。
           </p>
         </div>
-      )}
+      </div>
     </div>
   );
 };
