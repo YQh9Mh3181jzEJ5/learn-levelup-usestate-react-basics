@@ -1,5 +1,7 @@
 # ポケモン風カウントアップボタン 🎮
 
+![image](https://github.com/user-attachments/assets/038edefb-020d-4f6a-80e0-9740e245ab14)
+
 ## プロジェクト概要 📝
 
 このプロジェクトは、React、TypeScript、Vite、Tailwind CSS を使用して作成された、シンプルなカウントアップゲームです。ポケモンの世界観をイメージしたデザインで、経験値を積む -> レベルアップという過程を実装しました。
