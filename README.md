@@ -4,7 +4,7 @@
 
 このプロジェクトは、React、TypeScript、Vite、Tailwind CSS を使用して作成された、シンプルなカウントアップゲームです。ポケモンの世界観をイメージしたデザインで、経験値を積む -> レベルアップという過程を実装しました。
 
-![ゲームスクリーンショット](./path/to/screenshot.png)
+URL: https://learn-levelup-usestate-react-basics.vercel.app/
 
 ## 特徴 ✨
 
